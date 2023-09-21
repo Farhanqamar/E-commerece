@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tech City</title>
+    <link rel="icon" href="Images/i con 1.png" type="x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/8b66f0d114.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        html {
+            font-size: 80%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 9rem;
+        }
+
+        /* start header */
+        .header {
+            height: 63px;
+            width: 100%;
+            background-color: #000000;
+        }
+
+        .logo {
+            width: 80px;
+            height: 60px;
+            margin-left: 17px;
+            margin-top: 3px;
+        }
+
+        .nav {
+            width: 100%;
+            height: 63px;
+            position: absolute;
+
+        }
+
+        .header ul {
+            text-align: center
+        }
+
+        .header ul li {
+            display: inline-block;
+            margin: 0 10px;
+
+        }
+
+        .header ul li a {
+            color: #ffffff;
+            padding: 5px 10px;
+            font-family: 'Ubuntu', sans-serif;
+            margin: 30px;
+            position: relative;
+            bottom: 45px;
+            font-weight: 500;
+            font-size: 15px;
+
+        }
+
+        .header ul li a:hover {
+            color: #00ffff;
+            transition: 1s;
+            text-shadow: 0 0 5px #00ffff,
+                0 0 20px #00ffff,
+                0 0 60px #00ffff,
+                0 0 80px #00ffff;
+            transition: .7s;
+        }
+
+        .icons {
+            float: right;
+            /* margin-right:10px; */
+            font-size: 15px;
+        }
+
+        .icons a {
+            color: #ffffff;
+            margin: 35px;
+            position: relative;
+            bottom: 68px;
+        }
+
+        #menu-btn {
+            display: none;
+        }
+
+        .search-form {
+            position: absolute;
+            top: 115%;
+            right: 7%;
+            background-color: #fff;
+            width: 13rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+
+        .search-form:active {
+            transform: scaleY(1);
+        }
+
+        .search-form input {
+            height: 100%;
+            width: 100%;
+            font-size: 1rem;
+            color: black;
+            padding: 1rem;
+            text-transform: none;
+        }
+
+        .search-form label {
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: black;
+        }
+
+        .search-form label:hover {
+            color: rgb(185, 58, 12);
+
+        }
+
+
+
+        @media(max-width:991px) {
+            html {
+                font-size: 55%;
+            }
+
+            .header {
+                padding: 1.5rem 2rem;
+            }
+        }
+
+        @media(max-width:991px) {
+            html {
+                font-size: 55%;
+            }
+
+            .header {
+                padding: 1.5rem 2rem;
+            }
+        }
+
+
+
+        .services {
+            margin: 20px;
+            
+        }
+        .services h2 {
+            text-align: center;
+            padding: 10px;
+            background-color: #64707e;
+            color: #ffffff;
+            font-size: 20px;
+
+        }
+
+        .services h3 {
+            margin-bottom: 20px;
+        }
+
+        .service {
+            margin-bottom: 20px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        .service p{
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        .service img {
+            width: 250px;
+            height: 150px;
+        }
+
+        
+
+        /* footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+} */
+
+        /* start footer section */
+
+        .footer {
+            background: #222f3e;
+            padding: 70px 0;
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .footer .contaner {
+            max-width: 1500px;
+        }
+
+        .footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 40px;
+        }
+
+        .footer .col {
+            width: 25%;
+            padding: 0 15px;
+
+        }
+
+        .footer .col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer .col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer .col ul {
+            list-style: none;
+            margin-top: 45px;
+        }
+
+        .footer .col ul li:not(:last-child) {
+            margin-bottom: 17px;
+        }
+
+        .footer .col ul li a {
+            color: #fffffff3;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer .col ul li a:hover {
+            padding-left: 3px;
+        }
+
+        a i {
+            color: #ffffff;
+            font-size: 25px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        a i {
+            transform: scale(1.1);
+        }
+
+        /* footer .col-footer{
+  color: #ffffff;
+} */
+    </style>
+</head>
+
+<body>
+
+    <!-- start header -->
+
+    <header class="header">
+        <div class="nav">
+            <nav>
+                <label><a href="../index.html"><img src="images/logo 3.png" alt="Logo" class="logo"></a></label>
+                <div>
+                    <ul>
+                        <li><a href="../index.html"><b>Home</b></a></li>
+                        <li><a href="../Products/products.html">Products</a></li>
+                        <li><a href="services.html" target="_blank">Services</a></li>
+                        <li><a href="../contect us box/contect us.html" target="_blank">Contect us</a></li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fas fa-bars" id="menu-btn"></i></a>
+                </div>
+                <div class="search-form">
+                    <input type="search" placeholder="search here">
+                    <label for="search-box" class="fas fa-search"></label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- start services saction -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Product Repair</h3>
+            <img src="images/1.jpg" alt="Service 1">
+            <p>We offer professional repair services for all types of tech gadgets. Our experienced technicians can fix
+                various issues and ensure your devices are back in working condition.</p>
+        </div><hr>
+
+        <div class="service">
+            <h3>Technical Support</h3>
+            <img src="images/2.jpg" alt="Service 2">
+            <p>Need help with your gadgets? Our knowledgeable support team is available to assist you with
+                troubleshooting, setup, and any technical queries you may have.</p>
+        </div><hr>
+
+        <div class="service">
+            <h3>Device Setup</h3>
+            <img src="images/3.jpg" alt="Service 3">
+            <p>Let our experts take care of setting up your new devices. We'll ensure that everything is properly
+                configured and optimized for your convenience.</p>
+        </div><hr>
+
+    </section>
+
+
+    <!-- start footer section -->
+
+    <footer class="footer">
+        <div class="contaner">
+            <div class="row">
+                <div class="col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">privcy policy</a></li>
+                        <li><a href="#">contect us</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Online shop</h4>
+                    <ul>
+                        <li><a href="#">order now</a></li>
+                        <li><a href="#">products</a></li>
+                        <li><a href="#">card</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shoping</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Follw us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <p class="col-footer">&copy; 2023 Tech Gadgets E-commerce. All rights reserved.</p> -->
+    </footer>
+</body>
+
+</html>
